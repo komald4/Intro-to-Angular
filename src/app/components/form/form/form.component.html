@@ -1,3 +1,7 @@
+<div [ngClass]="isSpecial ? 'special' : ''">This div is special</div>
+<button (click)="toggle()">Toggle</button>
+
+
 <form [formGroup]="form">
 
     <label for="first-name">First Name: </label>
@@ -5,7 +9,35 @@
   
     <label for="last-name">Last Name: </label>
     <input id="last-name" type="text" formControlName="lastName">
-  
+
+    <label for="pet-name">Pets Name: </label>
+    <select name="pets" id="pet-select" formControlName="pet">
+        <option value="">--Please choose an option--</option>
+        <option value="dog">Dog</option>
+        <option value="cat">Cat</option>
+        <option value="hamster">Hamster</option>
+        <option value="parrot">Parrot</option>
+        <option value="spider">Spider</option>
+        <option value="goldfish">Goldfish</option>
+      </select>
+      
+    <label for="age">Age: </label>
+    <input type="radio" id="age1" name="age" value="30" formControlName="age">
+    <label for="age1">0 - 30</label><br>
+    <input type="radio" id="age2" name="age" value="60" formControlName="age">
+    <label for="age2">31 - 60</label><br>  
+    <input type="radio" id="age3" name="age" value="100" formControlName="age">
+    <label for="age3">61 - 100</label><br><br>
+
+    <label for="Coding">Coding: 
+    <input type="checkbox" value="Coding" [formControl]="coding">
+    </label>
+    <br>
+    <label for="Trvelling">Trvelling</label>
+    <input type="checkbox" value="Trvelling" [formControl]="travelling"><br>
+    <label for="Reading">Reading</label>
+    <input type="checkbox" value="Reading" [formControl]="reading"><br>
+
     <button (click)="submit()">Submit</button>
     <button (click)="fillSubmit()">Fill Form</button>
 
